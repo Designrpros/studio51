@@ -41,7 +41,7 @@ const InfoDetails = styled.p`
 `;
 
 const Section2 = styled.div`
-  height: 25vh;
+  height: 20vh;
   background-color: white;
   z-index: 0;
 `;

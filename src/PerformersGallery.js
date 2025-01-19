@@ -21,7 +21,7 @@ const PerformersGallery = () => {
 
   return (
     <PerformersSection>
-      <PerformerTitle>Lineup</PerformerTitle>
+      <PerformerTitle>Artister og utgivelser</PerformerTitle>
       <PerformerGrid>
         {performers.map((performer, index) => (
           <PerformerCard key={index}>

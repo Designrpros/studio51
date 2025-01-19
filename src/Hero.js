@@ -1,60 +1,43 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import MusicCircleImage from './Images/MusicCircle.png'; // Import MusicCircle image
 import BorderBottomWaveform from './BorderBottomWaveform'; // Import the waveform component
-import FlowerPowerImage from './Images/FlowerPower.png';   // Placeholder for flower frame image
 
-// Animation for flower sway
-const sway = keyframes`
-  0%, 100% {
+// Animation for circular rotation
+const rotate = keyframes`
+  0% {
     transform: rotate(0deg);
   }
-  50% {
-    transform: rotate(5deg);
+  100% {
+    transform: rotate(360deg);
   }
 `;
 
 // Hero section styled component
 const HeroSection = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #ffffff;
+  background-color: #ffff; /* Light gray background */
   position: relative;
   overflow: hidden;
-  z-index: 1;
 `;
 
-// Flower frame styled component
-const TopFlowerFrame = styled.div`
+// Rotating image container
+const RotatingImage = styled.div`
   position: absolute;
-  width: 100%;
-  height: 100%;
-  background-image: url(${FlowerPowerImage}); /* Use flower image */
-  background-size: cover;
-  background-position: center;
+  width: 1000px; /* Adjust as needed */
+  height: 1000px;
+  background-image: url(${MusicCircleImage});
+  background-size: contain;
   background-repeat: no-repeat;
-  z-index: 0;
-  filter: grayscale(100%) brightness(0) invert(0); /* Style the flower frame in black */
+  background-position: center;
+  animation: ${rotate} 50s linear infinite; /* Rotates continuously */
 `;
 
-// Flower frame styled component
-const FlowerFrame = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-image: url(${FlowerPowerImage}); /* Use flower image */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: 0;
-  filter: grayscale(100%) brightness(0) invert(0); /* Style the flower frame in black */
-`;
-
-// Wrapper for the text and waveform
+// Wrapper for the text
 const LogoWrapper = styled.div`
-  position: relative;
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -62,24 +45,23 @@ const LogoWrapper = styled.div`
   align-items: center;
 `;
 
-// Text styling for "Lydhagen"
+// Centered text styling
 const HeroText = styled.h1`
   font-size: 120px;
   color: #000;
   text-align: center;
   margin-bottom: -20px; /* Reduce margin to bring text closer to waveform */
+
 `;
 
 const Hero = () => {
   return (
     <HeroSection>
-      {/* Flower frame surrounding the hero section */}
-      <FlowerFrame />
-      <TopFlowerFrame />
+      {/* Rotating image */}
+      <RotatingImage />
+      {/* Centered text */}
       <LogoWrapper>
-        {/* Text "Lydhagen" */}
-        <HeroText>Lydhagen</HeroText>
-        {/* Border-bottom waveform right below the text */}
+        <HeroText>Studio 51</HeroText>
         <BorderBottomWaveform />
       </LogoWrapper>
     </HeroSection>

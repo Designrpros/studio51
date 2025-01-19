@@ -1,141 +1,104 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FaFacebookF, FaInstagram, FaBehance, FaDribbble, FaLinkedinIn, FaTwitter } from 'react-icons/fa'; 
 
-// Placeholder images for the creative artists (can be replaced with real data)
-import Creative1 from './Images/Studio51.png';
-import Creative2 from './Images/Thomas.png';
-import Creative3 from './Images/Thomas.png';
+// Plassholderbilder for kategorier
+import Vinyl from './Images/Vinyl.png';
+import Camera from './Images/Camera.png';
 
-const CreativeArtistsGallery = () => {
-  // Array of creative artists (replace with real data)
-  const creatives = [
-    { name: "Studio 51", role: "Arrangjør", image: Creative1, socials: { instagram: 'https://instagram.com', behance: 'https://behance.net' } },
-    { name: "Visual Artist 2", role: "Graphic Designer", image: Creative2, socials: { dribbble: 'https://dribbble.com', linkedin: 'https://linkedin.com' } },
-    { name: "Organizer 1", role: "Event Organizer", image: Creative3, socials: { facebook: 'https://facebook.com', twitter: 'https://twitter.com' } },
-    { name: "Studio 51", role: "Arrangjør", image: Creative1, socials: { instagram: 'https://instagram.com', behance: 'https://behance.net' } },
-    { name: "Visual Artist 2", role: "Graphic Designer", image: Creative2, socials: { dribbble: 'https://dribbble.com', linkedin: 'https://linkedin.com' } },
-    { name: "Organizer 1", role: "Event Organizer", image: Creative3, socials: { facebook: 'https://facebook.com', twitter: 'https://twitter.com' } },
+const CreativeCategories = () => {
+  // Array med kategorier, plassholderbilder og beskrivelser
+  const categories = [
+    { title: "Musikkproduksjon", image: Vinyl, description: "Skape og produsere musikkspor i ulike sjangre." },
+    { title: "Filmproduksjon", image: Camera, description: "Regissere, filme og redigere fengende historier." },
+    { title: "Grafisk Design", image: Vinyl, description: "Designe visuelt innhold for merkevarebygging og markedsføring." },
+    { title: "Gaming Grupper", image: Camera, description: "Bygge samfunn og arrangere gaming events." },
+    { title: "Sosiale Medier & Markedsføring", image: Vinyl, description: "Promotere merker gjennom innovative strategier." },
+    { title: "Podcasting", image: Camera, description: "Spille inn og dele engasjerende podcast-episoder." },
+    { title: "Informasjonsteknologi", image: Vinyl, description: "Utvikle IT-løsninger for å effektivisere operasjoner." },
+    { title: "Kunstig Intelligens", image: Camera, description: "Utforske AI-innovasjoner for kreative løsninger." },
+    { title: "Festival Arrangjør", image: Vinyl, description: "Locale artister, aktiviteter" },
+    { title: "Administrative Aktiviteter", image: Camera, description: "Administrere og organisere studiooperasjoner." },
   ];
 
   return (
-    <CreativeSection>
-      <CreativeTitle>Backstage</CreativeTitle>
-      <CreativeGrid>
-        {creatives.map((creative, index) => (
-          <CreativeCard key={index}>
-            <PolaroidFrame>
-              <Image src={creative.image} alt={creative.name} />
-              <Caption>
-                <strong>{creative.name}</strong> <br />
-                {creative.role}
-              </Caption>
-            </PolaroidFrame>
-            <SocialIcons>
-              {creative.socials.instagram && (
-                <SocialIcon href={creative.socials.instagram} target="_blank">
-                  <FaInstagram />
-                </SocialIcon>
-              )}
-              {creative.socials.behance && (
-                <SocialIcon href={creative.socials.behance} target="_blank">
-                  <FaBehance />
-                </SocialIcon>
-              )}
-              {creative.socials.dribbble && (
-                <SocialIcon href={creative.socials.dribbble} target="_blank">
-                  <FaDribbble />
-                </SocialIcon>
-              )}
-              {creative.socials.linkedin && (
-                <SocialIcon href={creative.socials.linkedin} target="_blank">
-                  <FaLinkedinIn />
-                </SocialIcon>
-              )}
-              {creative.socials.facebook && (
-                <SocialIcon href={creative.socials.facebook} target="_blank">
-                  <FaFacebookF />
-                </SocialIcon>
-              )}
-              {creative.socials.twitter && (
-                <SocialIcon href={creative.socials.twitter} target="_blank">
-                  <FaTwitter />
-                </SocialIcon>
-              )}
-            </SocialIcons>
-          </CreativeCard>
+    <CategoriesSection>
+      <SectionTitle>Hva Vi Gjør</SectionTitle>
+      <CategoriesGrid>
+        {categories.map((category, index) => (
+          <CategoryCard key={index}>
+            <ImageContainer>
+              <CategoryImage src={category.image} alt={category.title} />
+            </ImageContainer>
+            <CategoryTitle>{category.title}</CategoryTitle>
+            <CategoryDescription>{category.description}</CategoryDescription>
+          </CategoryCard>
         ))}
-      </CreativeGrid>
-    </CreativeSection>
+      </CategoriesGrid>
+    </CategoriesSection>
   );
 };
 
 // Styled Components
-
-const CreativeSection = styled.section`
+const CategoriesSection = styled.section`
   padding: 80px 40px;
   background-color: #ffffff;
   color: #000;
   text-align: center;
 `;
 
-const CreativeTitle = styled.h2`
+const SectionTitle = styled.h2`
   font-size: 80px;
-  font-weight: 700;
+  font-weight: bold;
   margin-bottom: 40px;
 `;
 
-const CreativeGrid = styled.div`
+const CategoriesGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsive layout */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Responsivt gridlayout */
   gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
 `;
 
-const CreativeCard = styled.div`
+const CategoryCard = styled.div`
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   text-align: center;
-  border-radius: 10px;
-  position: relative;
-`;
-
-const PolaroidFrame = styled.div`
-  background-color: #ffffff;
-  border: 8px solid #000000;
-  padding: 20px;
-  width: 320px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  box-sizing: border-box;
-  position: relative;
-  z-index: 1;
-`;
-
-const Image = styled.img`
-  width: 100%;
-  height: auto;
-`;
-
-const Caption = styled.p`
-  margin-top: 10px;
-  font-size: 16px;
-  color: #000;
-`;
-
-const SocialIcons = styled.div`
-  display: flex;
-  gap: 15px;
-  margin-top: 20px;
-  justify-content: center;
-`;
-
-const SocialIcon = styled.a`
-  font-size: 24px;
-  color: #000000;
-  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative; /* Lagt til for konsistens */
+  
   &:hover {
-    color: #555555;
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
 `;
 
-export default CreativeArtistsGallery;
+const ImageContainer = styled.div`
+  width: 100%;
+  height: 160px; /* Redusert høyde for mindre bilder */
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  position: relative; /* Lagt til for konsistens */
+`;
+
+const CategoryImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Sørger for at hele bildet får plass i containeren */
+`;
+
+const CategoryTitle = styled.h3`
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+`;
+
+const CategoryDescription = styled.p`
+  font-size: 16px;
+  color: #555555;
+`;
+
+export default CreativeCategories;

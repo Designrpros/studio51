@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import CreativeArtistView from './CreativeArtistView';
-import About from './About';
-import Projects from './Projects';
-import Contact from './Contact';
+import CreativeArtistView from './pages/CreativeArtistView';
+import About from './pages/About';
+import Projects from './pages/Projects';
+import Contact from './pages/Contact';
 import Lydhagen from './Lydhagen';  // Import the new Lydhagen one-page component
 
 const App = () => {

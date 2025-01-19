@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import MusicCircleImage from './Images/MusicCircle.png'; // Import MusicCircle image
-import BorderBottomWaveform from './BorderBottomWaveform'; // Import the waveform component
+import BorderBottomWaveform from './components/BorderBottomWaveform'; // Import the waveform component
 
 // Animation for circular rotation
 const rotate = keyframes`

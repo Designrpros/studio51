@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaSpotify, FaYoutube, FaPinterestP, FaTiktok } from 'react-icons/fa'; 
 import { Link } from 'react-router-dom';
-import Thomas from './Images/AuroraB.jpeg'; // Placeholder image
-import Waveform from './Waveform'; // Import the waveform component
-import flows from './Images/flows.png'; // Placeholder for the flower image
+import Thomas from '../Images/AuroraB.jpeg'; // Placeholder image
+import Waveform from '../Waveform'; // Import the waveform component
+import flows from '../Images/flows.png'; // Placeholder for the flower image
 
 const CreativeArtistView = () => {
   return (
@@ -18,7 +18,7 @@ const CreativeArtistView = () => {
         <TabLink to="/about">Om</TabLink>
         <TabLink to="/projects">Utgivelser</TabLink>
         <TabLink to="/contact">Kontakt</TabLink>
-        <ExternalTabLink href="https://studio-51-homepage.vercel.app" target="_blank">Studio 51</ExternalTabLink>
+        <ExternalTabLink href="https://studio51.vercel.app" target="_blank">Studio 51</ExternalTabLink>
       </CustomTabBar>
 
       <PolaroidWrapper>

@@ -1,43 +1,147 @@
 import React from 'react';
 import styled from 'styled-components';
-import flowsUp from './Images/flowsUp.png';  
+import flowsUp from './Images/flowsUp.png';
 
 // Flower frame styled component
 const FlowerFrameUp = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url(${flowsUp}); /* Use flower image */
+  background-image: url(${flowsUp});
   background-repeat: no-repeat;
-  filter: grayscale(100%) brightness(0) invert(0); /* Style the flower frame in black */
+  filter: grayscale(100%) brightness(0) invert(0);
   z-index: 1;
-  color: #00000;
+  color: #000000;
 `;
 
-// Second Section: Festival Information
-const InfoSection2 = styled.section`
+// Contact Section Styling
+const ContactSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 70vh;
   color: #ffffff;
   background-color: #000000;
   position: relative;
   overflow: hidden;
   z-index: 1;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
 `;
 
-const InfoTitle2 = styled.h2`
+const ContactTitle = styled.h2`
   font-size: 40px;
   font-weight: 700;
   margin-bottom: 20px;
 `;
 
-const InfoDetails = styled.p`
+const ContactText = styled.p`
   font-size: 18px;
   line-height: 1.6;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto 30px;
+  text-align: center;
+`;
+
+const ContactLink = styled.a`
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  margin-bottom: 20px;
+  transition: color 0.3s;
+
+  &:hover {
+    color: #f39c12;
+  }
+
+  & .material-icons {
+    margin-right: 10px;
+  }
+`;
+
+const Address = styled.div`
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.8;
+  margin-top: 20px;
+
+  & .material-icons {
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+
+  a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #f39c12;
+    }
+  }
+`;
+
+const ContactForm = styled.form`
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+`;
+
+const Input = styled.input`
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+`;
+
+const TextArea = styled.textarea`
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  resize: none;
+  height: 100px;
+`;
+
+const SubmitButton = styled.button`
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #d35400;
+  }
+`;
+
+const SocialLinks = styled.div`
+  margin-top: 30px;
+  text-align: center;
+  font-size: 18px;
+
+  & a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #f39c12;
+    }
+  }
 `;
 
 const Section2 = styled.div`
@@ -46,7 +150,6 @@ const Section2 = styled.div`
   z-index: 0;
 `;
 
-// Footer
 const Footer = styled.footer`
   background-color: #000;
   color: #ffffff;
@@ -60,31 +163,57 @@ const FooterText = styled.p`
   margin: 0;
 `;
 
-// Second Section Component
-const FestivalInfo = () => {
+const ContactPage = () => {
   return (
     <>
       <Section2>
         <FlowerFrameUp />
       </Section2>
-      <InfoSection2>
-        <InfoTitle2>Festival Information</InfoTitle2>
-        <InfoDetails>
-          Dato: Mai 24 - 26, 2025<br />
-          Sted: Sandvika<br />
-          <br />
-          Velkommen til Lydhagen Festival! Vi er glade for å kunngjøre at det vil være et variert utvalg av aktiviteter for alle aldre. Her er noe av det du kan forvente:
-          <ul>
-            <li><strong>Mat og drikke:</strong> Nyt deilige retter fra lokale matleverandører. Det vil også bli servert alkoholholdige og alkoholfri alternativer.</li>
-            <li><strong>Familievennlige aktiviteter:</strong> Bli med på morsomme aktiviteter for barn, inkludert ansiktsmaling og kunstverksteder.</li>
-            <li><strong>Sikkerhet:</strong> Vi prioriterer sikkerheten til våre gjester. Det vil være sikkerhetspersonell på stedet for å sørge for en trygg og morsom opplevelse.</li>
-            <li><strong>Rullestoltilgjengelighet:</strong> Festivalområdet er tilgjengelig for alle. Hvis du har spesielle behov, vennligst gi oss beskjed på forhånd.</li>
-            <li><strong>Transport:</strong> Det vil være god offentlig transport til og fra festivalen, og vi oppfordrer alle til å bruke kollektivtransport der det er mulig.</li>
-            <li><strong>Overnatting:</strong> For de som kommer langveisfra, finnes det flere hoteller og campingplasser i nærheten.</li>
-            <li><strong>Kontakt oss:</strong> For mer informasjon, kontakt oss gjerne på: <a href="mailto:info@lydhagenfestival.com">info@lydhagenfestival.com</a></li>
-          </ul>
-        </InfoDetails>
-      </InfoSection2>
+      <ContactSection>
+        <ContactTitle>Kontakt Oss</ContactTitle>
+        <ContactText>
+          Ta gjerne kontakt med oss via e-post eller telefon, eller besøk oss på en av våre adresser.
+        </ContactText>
+        <ContactLink href="mailto:home@rapclinic.no">
+          <span className="material-icons">email</span>
+          home@rapclinic.no
+        </ContactLink>
+        <ContactLink href="tel:+4797739908">
+          <span className="material-icons">phone</span>
+          +47 977 39 908
+        </ContactLink>
+        <Address>
+          <div>
+            <a
+              href="https://www.google.com/maps?q=Gamle+Drammensvei+25,+1369+Stabekk,+Norge"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Gamle Drammensvei 25, 1369 Stabekk, Norge
+            </a>
+          </div>
+          <div>
+            <a
+              href="https://www.google.com/maps?q=Anthon+Walles+vei+37,+1337+Sandvika,+Norge"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Anthon Walles vei 37, 1337 Sandvika, Norge
+            </a>
+          </div>
+        </Address>
+        <ContactForm>
+          <Input type="text" placeholder="Navn" required />
+          <Input type="email" placeholder="E-post" required />
+          <TextArea placeholder="Din melding" required></TextArea>
+          <SubmitButton type="submit">Send Melding</SubmitButton>
+        </ContactForm>
+        <SocialLinks>
+          <a href="https://instagram.com/rapclinic" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://facebook.com/rapclinic" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a href="https://twitter.com/rapclinic" target="_blank" rel="noopener noreferrer">Twitter</a>
+        </SocialLinks>
+      </ContactSection>
       <Footer>
         <FooterText>© 2025 Studio 51</FooterText>
       </Footer>
@@ -92,4 +221,4 @@ const FestivalInfo = () => {
   );
 };
 
-export default FestivalInfo;
+export default ContactPage;

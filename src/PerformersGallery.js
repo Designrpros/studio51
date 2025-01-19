@@ -85,12 +85,21 @@ const PerformersSection = styled.section`
   background-color: #ffffff;
   color: #000;
   text-align: center;
+  
+  @media (max-width: 768px) {
+    padding: 40px 20px;
+  }
 `;
 
 const PerformerTitle = styled.h2`
   font-size: 80px;
   font-weight: 700;
   margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    font-size: 50px;
+    margin-bottom: 30px;
+  }
 `;
 
 const PerformerGrid = styled.div`
@@ -99,6 +108,10 @@ const PerformerGrid = styled.div`
   gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    gap: 20px;
+  }
 `;
 
 const PerformerCard = styled.div`
@@ -123,6 +136,11 @@ const PolaroidFrame = styled.div`
   box-sizing: border-box;
   position: relative;
   z-index: 1;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 10px;
+  }
 `;
 
 const Image = styled.img`
@@ -134,6 +152,10 @@ const Caption = styled.p`
   margin-top: 10px;
   font-size: 16px;
   color: #000;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;
 
 const SocialIcons = styled.div`
@@ -141,6 +163,11 @@ const SocialIcons = styled.div`
   gap: 15px;
   margin-top: 20px;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    gap: 10px;
+    margin-top: 15px;
+  }
 `;
 
 const SocialIcon = styled.a`
@@ -149,6 +176,10 @@ const SocialIcon = styled.a`
   text-decoration: none;
   &:hover {
     color: #555555;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 20px;
   }
 `;
 
